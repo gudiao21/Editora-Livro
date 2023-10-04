@@ -17,6 +17,11 @@
   </div>
 
   <div>
+    <%= form.label :supplier_id, 'Supplier', style: "display: block" %>
+    <%= form.collection_select :supplier_id, Supplier.all, :id, :name, prompt: 'Select a Supplier' %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
