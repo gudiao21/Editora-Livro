@@ -1,4 +1,10 @@
+#require "#{Rails.root}/app/controllers/users/sessions_controller"
+
 Rails.application.routes.draw do
+  devise_for :users
+
+  root to: "app/controllers/users/sessions#new"
+
   resources :parts
   resources :assemblies
   resources :authors
