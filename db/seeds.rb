@@ -8,4 +8,12 @@
 require 'factory_bot_rails'
 
 #Cria 2 forncecedores usando a factory
-FactoryBot.create_list(:supplier, 2)
+suppliers = FactoryBot.create_list(:supplier, 2)
+
+#Para cada fornecedor, cria uma conta associada
+suppliers.each do |supplier|
+  FactoryBot.create(:account, supplier: supplier)
+end
+
+#Cria 2 montagens usando a factory
+FactoryBot.create_list(:assembly, 2)
