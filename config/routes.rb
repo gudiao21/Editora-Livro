@@ -1,9 +1,11 @@
-#require "#{Rails.root}/app/controllers/users/sessions_controller"
-
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
-  root to: "app/controllers/users/sessions#new"
+  devise_scope :user do
+    root to: "users/sessions#new"
+  end
 
   resources :parts
   resources :assemblies
@@ -11,8 +13,4 @@ Rails.application.routes.draw do
   resources :books
   resources :accounts
   resources :suppliers
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
