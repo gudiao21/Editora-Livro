@@ -4,7 +4,8 @@
 
 <div>
   <%= link_to "Edit this supplier", edit_supplier_path(@supplier) %> |
-  <%= link_to "Back to suppliers", suppliers_path %>
+  <%= link_to "Back to suppliers", suppliers_path %> |
+  <%= link_to "Register Parts for this supplier", new_part_path(@part_number) %>
 
-  <%= button_to "Destroy this supplier", @supplier, method: :delete %>
+  <%= button_to "Destroy this supplier", @supplier, method: :delete, class: "button-style red-button" %>
 </div>
