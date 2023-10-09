@@ -6,14 +6,22 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'factory_bot_rails'
+require 'faker'
 
-#Cria 2 forncecedores usando a factory
+# Crie um usuário de exemplo:
+User.create!(
+  email: Faker::Internet.email,
+  password: 'password123',
+  password_confirmation: 'password123'
+)
+
+# Crie 2 fornecedores
 suppliers = FactoryBot.create_list(:supplier, 2)
 
-#Para cada fornecedor, cria uma conta associada
+# Crie contas associadas a cada fornecedor
 suppliers.each do |supplier|
   FactoryBot.create(:account, supplier: supplier)
 end
 
-#Cria 2 montagens usando a factory
+# Crie 2 montagens
 FactoryBot.create_list(:assembly, 2)
