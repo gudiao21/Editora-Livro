@@ -3,9 +3,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  devise_scope :user do
-    root to: "users/sessions#new"
-  end
+   devise_scope :user do
+     root to: 'devise/sessions#new'
+     #get 'login', to: 'devise/sessions#new', as: :new_user_session
+   end
+
+  #root to:'devise/sessions#new'
 
   resources :parts
   resources :assemblies
