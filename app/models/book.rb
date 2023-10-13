@@ -1,4 +1,4 @@
 class Book < ApplicationRecord
   belongs_to :author
-  belongs_to :assembly
+  has_many :assemblies
 end
