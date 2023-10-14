@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
+  get 'welcome/index'
+  devise_for :users, skip: :sessions
 
    devise_scope :user do
-     root to: 'devise/sessions#new'
-     #get 'login', to: 'devise/sessions#new', as: :new_user_session
+     root to: 'welcome#index'
    end
 
   #root to:'devise/sessions#new'
