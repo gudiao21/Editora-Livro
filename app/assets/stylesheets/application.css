@@ -1,38 +1,7 @@
-/* app/assets/stylesheets/application.css */
-
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-:root {
-    --blue-button-color: #3498db;
-    --red-button-color: #e74c3c;
-    --yellow-button-color: #FFD700;
-    --green-button-color: #2ecc71;
-}
-
-.button-style {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    color: white; /* cor do texto branco */
-    border-radius: 5px; /* bordas arredondadas */
-}
-
-.blue-button {
-    background-color: var(--blue-button-color);
-}
-
-.red-button {
-    background-color: var(--red-button-color);
-}
-
-.yellow-button {
-    background-color: var(--yellow-button-color)
-}
-
-.green-button {
-    background-color: var(--green-button-color);
+.hidden {
+    display: none !important;
 }
