@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag 'tailwind', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_importmap_tags %>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.turbo.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
 </head>
 
 <body>
@@ -25,7 +31,7 @@
             <div class="flex flex-col flex-grow pt-5 overflow-y-auto bg-white">
               <div class="flex items-center flex-shrink-0 px-4">
                 <%= image_tag("logo.png", size: "50x50", class: "imagem-redonda") %>
-                <p class="text-2xl leading-6"><%= link_to "DevEvo", root_path %></p>
+                <p class="text-2xl leading-6"><%= link_to "Editora-Livro", root_path %></p>
               </div>
 
               <div class="px-4 mt-6">
@@ -35,137 +41,62 @@
               <div class="flex flex-col flex-1 px-3 mt-6">
                 <div class="space-y-4">
                   <nav class="flex-1 space-y-2">
-
-
-                    <%= link_to profile_path(current_user.student.login), class: "flex items-center px-4 py-2.5 text-sm font-medium text-white transition-all duration-200 bg-indigo-600 rounded-lg group" do %>
-                      <svg class="flex-shrink-0 w-5 h-5 mr-4 w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                      </svg>
-                      Profile
+                    <%= link_to authors_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
+                      <%= image_tag("authors.jpeg", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
+                      Authors
                     <% end %>
+                  </nav>
 
-                    <a href="#" class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group">
+                  <hr class="border-gray-200"/>
+
+                  <nav class="flex-1 space-y-2">
+                    <%= link_to books_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
+                      <%= image_tag("books.png", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
+                      Books
+                    <% end %>
+                  </nav>
+
+                  <hr class="border-gray-200"/>
+
+                  <nav class="flex-1 space-y-2">
+                    <%= link_to suppliers_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
+                      <%= image_tag("suppliers.jpeg", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
+                      Suppliers
+                    <% end %>
+                  </nav>
+
+                  <hr class="border-gray-200"/>
+
+                  <nav class="flex-1 space-y-2">
+                    <%= link_to accounts_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
+                      <%= image_tag("accounts.jpeg", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
+                      Accounts
+                    <% end %>
+                  </nav>
+
+                  <hr class="border-gray-200"/>
+
+                  <nav class="flex-1 space-y-2">
+                    <%= link_to parts_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
+                    <%= image_tag("book_parts.jpeg", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
+                      Parts
+                    <% end %>
+                  </nav>
+
+                  <hr class="border-gray-200"/>
+
+                  <nav class="flex-1 space-y-2">
+                    <%= link_to assemblies_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
                       <svg class="flex-shrink-0 w-5 h-5 mr-4 w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                       </svg>
-                      Dashboard
-                    </a>
-                  </nav>
-
-                  <hr class="border-gray-200"/>
-
-                  <nav  class="flex-1 space-y-2 cursor-pointer" >
-                    <div  class="relative flex flex-col items-center px-4 py-2.5 text-sm font-medium transition-all hover:text-white rounded-lg hover:bg-indigo-600 group">
-                      <button onclick="showFutureMenu()" class="text-left flex justify-between items-center w-full">
-                        <svg class="flex-shrink-0 w-5 h-5 mr-4 w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
-                          <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-                        </svg>
-                        Future Generator
-                        <svg id="iconFuture" class="ml-2 w-5 h-5 group-hover:text-white hover:bg-indigo-600 transition ease-in-out duration-150" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                      </button>
-                      <div id="futureMenu" class="relative hidden left-0 w-48 mt-2 origin-top-left rounded-md md:w-48">
-                        <button class="flex justify-start items-center space-x-6 hover:text-white rounded px-3 py-2  w-full md:w-52">
-                          <%= link_to purposes_path, class: "text-left flex justify-between items-center w-full" do %>
-                            <%= t('application.purpose') %>
-                          <% end %>
-                        </button>
-                        <button class="flex justify-start items-center space-x-6 hover:text-white rounded px-3 py-2  w-full md:w-52">
-                          <%= link_to objectives_path, class: "text-left flex justify-between items-center w-full" do %>
-                            <%= t('application.objective') %>
-                          <% end %>
-                        </button>
-                        <button class="flex justify-start items-center space-x-6 hover:text-white rounded px-3 py-2 w-full md:w-52">
-                          <%= link_to goals_path, class: "text-left flex justify-between items-center w-full" do %>
-                            <%= t('application.goals') %>
-                          <% end %>
-                        </button>
-                        <button class="flex justify-start items-center space-x-6 hover:text-white rounded px-3 py-2 w-full md:w-52">
-                          <%= link_to micro_goals_path, class: "text-left flex justify-between items-center w-full" do %>
-                            <%= t('application.micro_goals') %>
-                          <% end %>
-                        </button>
-                        <button class="flex justify-start items-center space-x-6 hover:text-white rounded px-3 py-2 w-full md:w-52">
-                          <%= link_to routines_path, class: "text-left flex justify-between items-center w-full" do %>
-                            <%= t('application.routine') %>
-                          <% end %>
-                        </button>
-                        <button class="flex justify-start items-center space-x-6 hover:text-white rounded px-3 py-2 w-full md:w-52">
-                          <%= link_to thoughts_path, class: "text-left flex justify-between items-center w-full" do %>
-                            <%= t('application.thoughts') %>
-                          <% end %>
-                        </button>
-                      </div>
-                    </div>
-                  </nav>
-
-
-                  <nav  class="flex-1 space-y-2 cursor-pointer" >
-                    <div  class="relative flex flex-col items-center px-4 py-2.5 text-sm font-medium transition-all hover:text-white rounded-lg hover:bg-indigo-600 group">
-                      <button onclick="showBaseMenu()" class="text-left flex justify-between items-center w-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M469.3 19.3l23.4 23.4c25 25 25 65.5 0 90.5l-56.4 56.4L322.3 75.7l56.4-56.4c25-25 65.5-25 90.5 0zM44.9 353.2L299.7 98.3 413.7 212.3 158.8 467.1c-6.7 6.7-15.1 11.6-24.2 14.2l-104 29.7c-8.4 2.4-17.4 .1-23.6-6.1s-8.5-15.2-6.1-23.6l29.7-104c2.6-9.2 7.5-17.5 14.2-24.2zM249.4 103.4L103.4 249.4 16 161.9c-18.7-18.7-18.7-49.1 0-67.9L94.1 16c18.7-18.7 49.1-18.7 67.9 0l19.8 19.8c-.3 .3-.7 .6-1 .9l-64 64c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l64-64c.3-.3 .6-.7 .9-1l45.1 45.1zM408.6 262.6l45.1 45.1c-.3 .3-.7 .6-1 .9l-64 64c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l64-64c.3-.3 .6-.7 .9-1L496 350.1c18.7 18.7 18.7 49.1 0 67.9L417.9 496c-18.7 18.7-49.1 18.7-67.9 0l-87.4-87.4L408.6 262.6z"/></svg>Base Generator
-                        <svg id="iconBase" class="ml-2 w-5 h-5 group-hover:text-white hover:bg-indigo-600 transition ease-in-out duration-150" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                      </button>
-                      <div id="baseMenu" class="relative hidden left-0 w-48 mt-2 origin-top-left rounded-md md:w-48">
-                        <button class="flex justify-start items-center space-x-6 hover:text-white rounded px-3 py-2  w-full md:w-52">
-                          <%= link_to experiences_path, class: "text-left flex justify-between items-center w-full" do %>
-                            Cadastrar Experiência
-                          <% end %>
-                        </button>
-                      </div>
-                    </div>
-                  </nav>
-                  <nav class="flex-1 space-y-2 cursor-pointer" >
-                    <div class="relative flex flex-col items-center px-4 py-2.5 text-sm font-medium transition-all hover:text-white rounded-lg hover:bg-indigo-600 group">
-                      <button onclick="showVacancyMenu()" class="text-left flex justify-between items-center w-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"/></svg>
-                        Vacancy generator
-                        <svg id="iconVacancy" class="ml-2 w-5 h-5 group-hover:text-white hover:bg-indigo-600 transition ease-in-out duration-150" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                          <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                      </button>
-                      <div id="vacancyMenu" class="relative hidden left-0 w-48 mt-2 origin-top-left rounded-md md:w-48">
-                        <button class="flex justify-start items-center space-x-6 hover:text-white rounded px-3 py-2 w-full md:w-52">
-                          <%= link_to interviews_path, class: "text-left flex justify-between items-center w-full" do %>
-                            Cadastrar vaga
-                          <% end %>
-                        </button>
-                      </div>
-                    </div>
-                  </nav>
-
-
-                  <hr class="border-gray-200"/>
-
-                  <nav class="flex-1 space-y-2">
-                    <%= link_to workouts_lesson_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
-
-                      <svg class="flex-shrink-0 w-5 h-5 mr-4 w-6 h-6" fill="#000000" height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 209.632 209.632" xml:space="preserve">
-                        <path d="M177.294,182.326c0,2.761-2.238,5-5,5h-8.029h-16.667H26.376c-9.42,0-17.083-7.664-17.083-17.083v-18.754 c0-9.419,7.663-17.083,17.083-17.083h121.222h16.667h8.029c2.762,0,5,2.239,5,5s-2.238,5-5,5h-3.029v32.92h3.029 C175.056,177.326,177.294,179.565,177.294,182.326z M198.709,122.923c0,2.761-2.238,5-5,5h-7.52h-17.176H68.446 c-8.76,0-15.886-7.126-15.886-15.885V98.691c0-8.759,7.126-15.885,15.886-15.885h100.566h17.176h7.52c2.762,0,5,2.239,5,5 s-2.238,5-5,5h-2.52v25.117h2.52C196.471,117.923,198.709,120.161,198.709,122.923z M68.446,117.923h100.566h12.176V92.805h-12.176 H68.446c-3.245,0-5.886,2.64-5.886,5.885v13.347C62.561,115.283,65.201,117.923,68.446,117.923z M204.632,22.306h-42.829H47.83H5 c-2.762,0-5,2.239-5,5s2.238,5,5,5h4.293v42.758c-2.289,1.589-3.794,4.233-3.794,7.225c0,4.849,3.945,8.794,8.794,8.794 s8.794-3.945,8.794-8.794c0-2.992-1.505-5.635-3.794-7.225V32.306H42.83v39.421c0,2.761,2.238,5,5,5h113.973c2.762,0,5-2.239,5-5 V32.306h37.829c2.762,0,5-2.239,5-5S207.394,22.306,204.632,22.306z"></path>
-                      </svg>
-                      Workouts
+                      Assemblies
                     <% end %>
                   </nav>
 
                   <hr class="border-gray-200"/>
 
-                  <nav class="flex-1 space-y-2">
-                    <a href="#" class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group">
-                      <svg class="flex-shrink-0 w-5 h-5 mr-4 w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                          />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                      </svg>
-                      Settings
-                    </a>
-
+                 <nav class="flex-1 space-y-2">
                     <%= link_to destroy_user_session_path, data: { "turbo-method": :delete }, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
                       <svg class="flex-shrink-0 w-5 h-5 mr-4 w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
@@ -177,33 +108,6 @@
 
                   </nav>
 
-                </div>
-
-                <div class="h-screen pb-4 mt-20">
-                  <button type="button" class="flex items-center text-left justify-between w-full px-4 py-3 text-sm font-medium text-gray-900 transition-all duration-200 rounded-lg hover:bg-gray-100">
-                    <%= image_tag("profile.jpeg", class: "flex-shrink-0 object-cover w-12 h-12 mr-6 rounded-full") %>
-                    <%= current_user.student.name %>
-                  </button>
-
-                  <% if params[:action] != 'edit' || params[:controller] != 'students' %>
-                    <%= link_to "#{current_user.student.login}/edit", class: "flex items-center text-left justify-between w-full px-4 py-3 text-sm font-medium text-gray-900 transition-all duration-200 rounded-lg hover:bg-gray-100" do %>
-                      <span class="flex-shrink-0 w-5 h-5 mr-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="1em" style="color: #405c8c;">
-                          <path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/>
-                        </svg>
-                      </span>
-                      Edit Profile info
-                    <% end %>
-                  <% else %>
-                    <button type="button" class="flex items-center text-left justify-between w-full px-4 py-3 text-sm font-medium text-gray-900 transition-all duration-200 rounded-lg hover:bg-gray-100">
-                    <span class="flex-shrink-0 w-5 h-5 mr-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="1em" style="color: #405c8c;">
-                        <path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/>
-                      </svg>
-                    </span>
-                      Edit Profile info
-                    </button>
-                  <% end %>
                 </div>
 
               </div>
@@ -228,92 +132,24 @@
           <%= image_tag("logo.png", size: "50x50", class: "imagem-redonda h-8 mr-3") %>
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Editora-Livro Login</span>
         <% end %>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+          <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+              <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+            </li>
+            <li>
+              <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+            </li>
+            <li>
+              <%= link_to "Login", user_session_path, method: :post, class: "block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" %>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <%= yield %>
   <% end %>
 </div>
 
-<script>
-    let icon1 = document.getElementById("icon1");
-    let menu1 = document.getElementById("menu1");
-    const showMenu1 = (flag) => {
-        if (flag) {
-            icon1.classList.toggle("rotate-180");
-            menu1.classList.toggle("hidden");
-        }
-    };
-
-    let Main = document.getElementById("Main");
-    let open = document.getElementById("open");
-    let close = document.getElementById("close");
-
-    const showNav = (flag) => {
-        if (flag) {
-            Main.classList.toggle("-translate-x-full");
-            Main.classList.toggle("translate-x-0");
-            open.classList.toggle("hidden");
-            close.classList.toggle("hidden");
-        }
-    };
-
-    let iconVacancy = document.getElementById("iconVacancy");
-    let vacancyMenu = document.getElementById("vacancyMenu");
-    const showVacancyMenu = () => {
-        if (iconVacancy && vacancyMenu) {
-            iconVacancy.classList.toggle("rotate-180");
-            vacancyMenu.classList.toggle("hidden");
-        }
-    };
-
-    let iconBase = document.getElementById("iconBase");
-    let baseMenu = document.getElementById("baseMenu");
-    const showBaseMenu = () => {
-        if (iconBase && baseMenu) {
-            iconBase.classList.toggle("rotate-180");
-            baseMenu.classList.toggle("hidden");
-        }
-    };
-
-    let iconFuture = document.getElementById("iconFuture");
-    let futureMenu = document.getElementById("futureMenu");
-    const showFutureMenu = () => {
-        if (iconFuture && futureMenu) {
-            iconFuture.classList.toggle("rotate-180");
-            futureMenu.classList.toggle("hidden");
-        }
-    };
-</script>
-<script>
-    function toggleSubMenu(event) {
-        event.preventDefault();
-        var submenu = document.getElementById("submenu");
-        var arrowIcon = event.currentTarget.querySelector(".submenu-arrow");
-        var isOpen = submenu.style.display === "block";
-
-        let iconVacancy = document.getElementById("iconVacancy");
-        let vacancyMenu = document.getElementById("vacancyMenu");
-        const showVacancyMenu = () => {
-            iconVacancy.classList.toggle("rotate-180");
-            vacancyMenu.classList.toggle("hidden");
-        };
-
-        let iconBase = document.getElementById("iconBase");
-        let baseMenu = document.getElementById("baseMenu");
-        const showBaseMenu = () => {
-            iconBase.classList.toggle("rotate-180");
-            baseMenu.classList.toggle("hidden");
-        };
-
-        let iconFuture = document.getElementById("iconFuture");
-        let futureMenu = document.getElementById("futureMenu");
-        const showFutureMenu = () => {
-            iconFuture.classList.toggle("rotate-180");
-            futureMenu.classList.toggle("hidden");
-        };
-        submenu.style.display = "none";
-        arrowIcon.style.transform = "rotate(0deg)";
-    }
-</script>
 </body>
 </html>
