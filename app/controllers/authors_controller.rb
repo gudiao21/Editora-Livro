@@ -2,7 +2,12 @@ class AuthorsController < ApplicationController
   before_action :set_author, only: %i[ show edit update destroy ]
 
   def index
-    @authors = Author.all
+    if current_user.nil?
+      redirect_to new_user_session_path
+    else
+      @authors = Author.all
+      render 'index'
+    end
   end
 
   def show
