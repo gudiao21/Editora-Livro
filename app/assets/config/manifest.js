@@ -1,7 +1,8 @@
+//= link_tree ../images
 //= link tailwind.css
 //= link application.css
 //= link application.js
 //= link controllers/application.js
 //= link controllers/hello_controller.js
 //= link controllers/index.js
-//= link logo.png
+//= link_tree ../builds
