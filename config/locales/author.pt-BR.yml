@@ -1,0 +1,26 @@
+pt-BR:
+    views:
+      index:
+        add_new_author: Adicionar novo Autor
+        show_ellipsis_label: Mostrar
+        edit_ellipsis_label: Editar
+        delete_ellipsis_label: Apagar
+        name: Nome
+      edit:
+        editing_author: Editando Autor
+        back_to_authors: Voltar para Autores
+        show_this_author: Mostrar este autor
+        edit_this_author: Editar este autor
+        delete_this_author: Apagar este autor
+      form:
+        name: Nome
+        update: Atualizar
+        create: Criar
+      new:
+        new_author: 'Formulário para criação de novo autor:'
+        back_to_authors: Voltar para Autores
+    controllers:
+      create:
+        success: Autor criado com sucesso!
+        update: Autor atualizado com sucesso!
+        destroy: Autor apagado com sucesso!
