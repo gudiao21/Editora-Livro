@@ -1,0 +1,6 @@
+pt-BR:
+  views:
+    books:
+      index:
+        add_new_book: Adicionar novo Livro
+        name: Nome
