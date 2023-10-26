@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: editora_livro
+  password: postgres
+  host: localhost
+
+development:
+  <<: *default
+  database: editora_livro_desenvolvimento
+
+test:
+  <<: *default
+  database: editora_livro_teste
+
+production:
+  <<: *default
+  database: editora_livro_producao
