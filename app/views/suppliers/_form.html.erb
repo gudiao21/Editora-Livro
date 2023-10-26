@@ -17,6 +17,10 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <% if supplier.new_record? %>
+      <%= form.submit(class: "button-style green-button") %>
+    <% else %>
+      <%= form.submit(class: "button-style yellow-button") %>
+    <% end %>
   </div>
 <% end %>
