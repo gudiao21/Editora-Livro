@@ -3,4 +3,31 @@ pt-BR:
     books:
       index:
         add_new_book: Adicionar novo Livro
-        name: Nome
+        title: Título
+        show_ellipsis_label: Mostrar
+        edit_ellipsis_label: Editar
+        delete_ellipsis_label: Apagar
+      form:
+        title: Título do Livro
+        update: Atualizar
+        create: Criar
+        published_at: Publicado em
+        author_id: Autor
+      new:
+        new_book: 'Formulário para criação de novo livro:'
+        back_to_books: Voltar para livros
+      show:
+        back_to_books: Voltar para livros
+        edit_this_book: Editar este livro
+        delete_this_book: Apagar este livro
+      edit:
+        editing_book: Editando Livro
+        show_this_book: Mostrar este livro
+        back_to_books: Voltar para livros
+  controllers:
+    books:
+      success: Livro criado com sucesso!
+      update: Livro atualizado com sucesso!
+      destroy: Livro apagado com sucesso!
+
+
