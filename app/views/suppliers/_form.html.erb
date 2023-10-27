@@ -1,5 +1,5 @@
-<%= form_with(model: supplier) do |form| %>
-  <% if supplier.errors.any? %>
+<%= form_with(model: @supplier) do |form| %>
+  <% if @supplier.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(supplier.errors.count, "error") %> prohibited this supplier from being saved:</h2>
 
@@ -12,15 +12,11 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :name, t('views.suppliers.form.name'), style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <% if supplier.new_record? %>
-      <%= form.submit(class: "button-style green-button") %>
-    <% else %>
-      <%= form.submit(class: "button-style yellow-button") %>
-    <% end %>
+    <%= form.submit @supplier.persisted? ? t('views.suppliers.form.update') : t('views.suppliers.form.create'), class: (@supplier.persisted? ? "bg-yellow-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer" : "bg-green-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer") %>
   </div>
 <% end %>
