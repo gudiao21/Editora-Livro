@@ -1,10 +1,10 @@
-<%= form_with(model: part) do |form| %>
-  <% if part.errors.any? %>
+<%= form_with(model: @part) do |form| %>
+  <% if @part.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(part.errors.count, "error") %> prohibited this part from being saved:</h2>
+      <h2><%= pluralize(@part.errors.count, "error") %> prohibited this part from being saved:</h2>
 
       <ul>
-        <% part.errors.each do |error| %>
+        <% @part.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -12,16 +12,16 @@
   <% end %>
 
   <div>
-    <%= form.label :part_number, style: "display: block" %>
+    <%= form.label :part_number, t('views.parts.form.part_number'), style: "display: block" %>
     <%= form.text_field :part_number %>
   </div>
 
   <div>
-    <%= form.label :supplier_id, 'Supplier', style: "display: block" %>
-    <%= form.collection_select :supplier_id, Supplier.all, :id, :name, prompt: 'Select a Supplier' %>
+    <%= form.label :supplier_id, t('views.parts.form.supplier'), style: "display: block" %>
+    <%= form.collection_select :supplier_id, Supplier.all, :id, :name, { prompt: t('views.parts.form.select_supplier') } %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit @part.persisted? ? t('views.parts.form.update') : t('views.parts.form.create'), class: (@part.persisted? ? "bg-yellow-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer" : "bg-green-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer") %>
   </div>
 <% end %>
