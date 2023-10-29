@@ -16,6 +16,8 @@
     <%= form.text_field :part_number %>
   </div>
 
+<br>
+
   <div>
     <%= form.label :supplier_id, t('views.parts.part.supplier'), style: "display: block" %>
     <%= form.collection_select :supplier_id, Supplier.all, :id, :name, { prompt: t('views.parts.form.select_supplier') } %>
