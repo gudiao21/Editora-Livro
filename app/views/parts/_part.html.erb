@@ -1,12 +1,12 @@
-<div id="<%= dom_id part %>">
+<div id="<%= dom_id @part %>">
   <p>
-    <strong>Part number:</strong>
-    <%= part.part_number %>
+    <strong><%= t('views.parts.index.part_number') %></strong>
+    <%= @part.part_number %>
   </p>
 
   <p>
-    <strong>Supplier:</strong>
-    <%= part.supplier.name  %>
+    <strong><%= t('views.parts.part.supplier') %>:</strong>
+    <%= @part.supplier.name  %>
   </p>
 
  </div>
