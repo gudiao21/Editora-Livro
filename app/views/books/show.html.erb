@@ -1,6 +1,8 @@
 <p class="mb-4 text-xl font-extrabold leading-none text-gray-900 md:text-2xl dark:text-white">
-  <%= @book.title %>
+  <%= t('views.authors.index.title') %>: <%= @book.title %>
 </p>
+
+<%= render partial: 'books/book', locals: { book: @book } %>
 
 <div class="flex items-center space-x-4 mt-8">
 
