@@ -25,7 +25,7 @@ class AssembliesController < ApplicationController
 
     respond_to do |format|
       if @assembly.save
-        format.html { redirect_to assembly_url(@assembly), notice: "Assembly was successfully created." }
+        format.html { redirect_to assembly_url(@assembly), notice: t('controllers.assemblies.success') }
         format.json { render :show, status: :created, location: @assembly }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class AssembliesController < ApplicationController
   def update
     respond_to do |format|
       if @assembly.update(assembly_params)
-        format.html { redirect_to assembly_url(@assembly), notice: "Assembly was successfully updated." }
+        format.html { redirect_to assembly_url(@assembly), notice: t('controllers.assemblies.update') }
         format.json { render :show, status: :ok, location: @assembly }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class AssembliesController < ApplicationController
     @assembly.destroy
 
     respond_to do |format|
-      format.html { redirect_to assemblies_url, notice: "Assembly was successfully destroyed." }
+      format.html { redirect_to assemblies_url, notice: t('controllers.assemblies.destroy') }
       format.json { head :no_content }
     end
   end
@@ -65,6 +65,6 @@ class AssembliesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def assembly_params
-      params.require(:assembly).permit(:name)
+      params.require(:assembly).permit(:name, :book_id, part_ids: [])
     end
 end

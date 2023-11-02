@@ -25,7 +25,7 @@ class AuthorsController < ApplicationController
 
     respond_to do |format|
       if @author.save
-        format.html { redirect_to author_url(@author), notice: "Author was successfully created." }
+        format.html { redirect_to author_url(@author), notice: t('controllers.authors.create.success') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -35,7 +35,7 @@ class AuthorsController < ApplicationController
   def update
     respond_to do |format|
       if @author.update(author_params)
-        format.html { redirect_to author_url(@author), notice: "Author was successfully updated." }
+        format.html { redirect_to author_url(@author), notice: t('controllers.authors.create.update') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -46,7 +46,7 @@ class AuthorsController < ApplicationController
     @author.destroy
 
     respond_to do |format|
-      format.html { redirect_to authors_url, notice: "Author was successfully destroyed." }
+      format.html { redirect_to authors_url, notice: t('controllers.authors.create.destroy') }
     end
   end
 
@@ -56,6 +56,6 @@ class AuthorsController < ApplicationController
     end
 
     def author_params
-      params.require(:author).permit(:name)
+      params.require(:author).permit(:name, :cpf, :isbn)
     end
 end
