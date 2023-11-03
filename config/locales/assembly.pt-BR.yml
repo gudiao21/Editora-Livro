@@ -1,0 +1,33 @@
+pt-BR:
+  views:
+    assemblies:
+      index:
+        add_new_assembly: Adicionar nova Montagem
+        name: Nome
+        show_ellipsis_label: Mostrar
+        edit_ellipsis_label: Editar
+        delete_ellipsis_label: Apagar
+      form:
+        name: Nome
+        update: Atualizar
+        create: Criar
+        book_title: Título do livro
+        select_book: Selecione um livro
+        parts: Parte(s)
+      new:
+        new_assembly: 'Formulário para criação de nova montagem:'
+        back_to_assemblies: Voltar para Montagens
+      show:
+        back_to_assemblies: Voltar para Montagens
+        edit_this_assembly: Editar esta montagem
+        register_part_for_this_assembly: Cadastrar parte pra esta montagem
+        delete_this_assembly: Apagar esta montagem
+      edit:
+        editing_assembly: Editando Montagem
+        show_this_assembly: Mostrar esta montagem
+        back_to_assemblies: Voltar para Montagens
+  controllers:
+    assemblies:
+      success: Montagem criada com sucesso!
+      update: Montagem atualizada com sucesso!
+      destroy: Montagem apagada com sucesso!
