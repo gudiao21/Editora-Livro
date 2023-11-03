@@ -1,0 +1,29 @@
+pt-BR:
+  views:
+    accounts:
+      index:
+        add_new_account: Adicionar nova Conta
+        account_number: Número da conta
+        supplier: Fornecedor
+        show_ellipsis_label: Mostrar
+        edit_ellipsis_label: Editar
+        delete_ellipsis_label: Apagar
+      edit:
+        editing_account: Editando Conta
+        back_to_accounts: Voltar para Contas
+        show_this_account: Mostrar esta conta
+        edit_this_account: Editar esta conta
+        delete_this_account: Apagar esta conta
+      form:
+        account_number: Número da conta
+        update: Atualizar
+        create: Criar
+      new:
+        new_account: 'Formulário para criação de nova conta:'
+        back_to_accounts: Voltar para Contas
+  controllers:
+    accounts:
+      create:
+        success: Conta criada com sucesso!
+        update: Conta atualizada com sucesso!
+        destroy: Conta apagada com sucesso!
