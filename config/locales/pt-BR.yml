@@ -1,0 +1,5 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Houve um erro ao salvar o registro."
