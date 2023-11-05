@@ -1,7 +1,12 @@
 <div id="<%= dom_id @part %>">
   <p>
-    <strong><%= t('views.parts.index.part_number') %></strong>
+    <strong><%= t('views.parts.part.part_number') %>:</strong>
     <%= @part.part_number %>
+  </p>
+
+  <p>
+    <strong><%= t('views.parts.part.part_name') %>:</strong>
+    <%= @part.name %>
   </p>
 
   <p>
