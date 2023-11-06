@@ -1,0 +1,30 @@
+pt-BR:
+  views:
+    suppliers:
+      index:
+        add_new_supplier: Adicionar novo Fornecedor
+        name: Nome
+        show_ellipsis_label: Mostrar
+        edit_ellipsis_label: Editar
+        delete_ellipsis_label: Apagar
+      form:
+        name: Nome
+        update: Atualizar
+        create: Criar
+      new:
+        new_supplier: 'Formulário para criação de novo fornecedor:'
+        back_to_suppliers: Voltar para Fornecedores
+      show:
+        back_to_suppliers: Voltar para Fornecedores
+        edit_this_supplier: Editar este fornecedor
+        register_part_for_this_supplier: Cadastrar parte pra este fornecedor
+        delete_this_supplier: Apagar este fornecedor
+      edit:
+        editing_supplier: Editando Fornecedor
+        show_this_supplier: Mostrar este fornecedor
+        back_to_suppliers: Voltar para Fornecedores
+  controllers:
+    suppliers:
+      success: Fornecedor criado com sucesso!
+      update: Fornecedor atualizado com sucesso!
+      destroy: Fornecedor apagado com sucesso!
