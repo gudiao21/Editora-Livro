@@ -3,7 +3,8 @@ pt-BR:
     assemblies:
       index:
         add_new_assembly: Adicionar nova Montagem
-        name: Nome
+        name: Nome da montagem
+        assembly_parts: Partes para esta montagem
         show_ellipsis_label: Mostrar
         edit_ellipsis_label: Editar
         delete_ellipsis_label: Apagar
