@@ -6,7 +6,8 @@
 
   <p>
     <strong><%= t('views.assemblies.index.assembly_parts') %> :</strong>
-    <%= @assembly.parts.name %>
+    <% @assembly.parts.each do |part| %>
+      <%= part.name %>
+    <% end %>
   </p>
-
 </div>
