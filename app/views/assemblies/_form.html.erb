@@ -43,9 +43,11 @@
 
   <div id="added-parts">
     <!-- Aqui as partes adicionadas serão exibidas dinamicamente -->
+    <%= render "parts/form" %>
   </div>
 
   <div>
     <%= form.submit @assembly.persisted? ? t('views.assemblies.form.update') : t('views.assemblies.form.create'), class: (@assembly.persisted? ? "bg-yellow-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer" : "bg-green-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer") %>
   </div>
 <% end %>
+
