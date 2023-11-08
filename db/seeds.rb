@@ -19,12 +19,35 @@ suppliers.each do |supplier|
   FactoryBot.create(:account, supplier: supplier)
 end
 
-# Crie um autor
-author = FactoryBot.create(:author)
+# Crie 5 autores
+#author = FactoryBot.create(:author)
+5.times do
+  FactoryBot.create(:author, name: Faker::Book.author, cpf: Faker::Number.number(digits: 11))
+end
 
-# Crie um livro
-book = FactoryBot.create(:book, author:author, name: Faker::Book.title)
+# Crie 5 books com nomes aleatórios e ISBNs aleatórios
+5.times do
+  Book.create(title: Faker::Book.title, author: Author.first, isbn: Faker::Code.isbn)
+end
 
-# Crie 2 montagens associadas ao livro criado
-Book.create(name: "Entendendo algoritmos", published_at: "2017-04-30T00:00:00Z", author_id: 1)
-Book.create(name: "A linguagem de Programação GO", published_at: "2017-09-08T00:00:00Z", author_id: 1)
+# seeds.rb
+
+# Crie 5 registros para Parts
+5.times do
+  Part.create!(
+    name: Faker::Lorem.word,  # Use a gem como Faker para gerar nomes fictícios
+  # Outros atributos do modelo Part
+    )
+end
+
+# Crie 5 registros para Assembly e associe cada um deles a partes aleatórias
+5.times do
+  assembly = Assembly.create!(
+    name: Faker::Lorem.sentence,  # Use a gem como Faker para gerar nomes fictícios
+    book_id: Book.pluck(:id).sample  # Suponha que você tenha registros na tabela de Books
+  # Outros atributos do modelo Assembly
+  )
+
+  # Associe partes aleatórias ao assembly
+  assembly.parts << Part.all.sample(rand(1..5))
+end
