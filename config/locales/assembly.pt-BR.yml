@@ -14,7 +14,7 @@ pt-BR:
         create: Criar
         book_title: Título do livro
         select_book: Selecione um livro
-        parts: Parte(s)
+        parts: 'Parte(s):'
       new:
         new_assembly: 'Formulário para criação de nova montagem:'
         back_to_assemblies: Voltar para Montagens
