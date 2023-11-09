@@ -4,3 +4,6 @@ import "controllers";
 import 'flowbite';
 import 'flowbite-datepicker';
 import 'flowbite/dist/datepicker.turbo.js';
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
