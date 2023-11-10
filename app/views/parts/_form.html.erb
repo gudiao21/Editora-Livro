@@ -1,4 +1,5 @@
 <%= form_with(model: @part) do |form| %>
+  <%= form_authenticity_token %>
   <% if @part.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(@part.errors.count, "error") %> prohibited this part from being saved:</h2>
