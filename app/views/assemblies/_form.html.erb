@@ -29,37 +29,23 @@
     <%= form.label :parts, t('views.assemblies.form.parts'), style: "display: block" %>
     <div class="flex items-center space-x-2">
       <div class="w-1/2">
-        <div class="container">
+        <div class="container"> <!-- Adicionado o contêiner aqui -->
           <%= form.collection_check_boxes :part_ids, Part.all, :id, :name do |b| %>
             <label class="block">
               <%= b.check_box + b.text %>
             </label>
           <% end %>
-        </div>
+        </div> <!-- Fechamento do contêiner -->
       </div>
-      <button type="button" id="add-part-button" class="px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer" onclick="document.getElementById('myModal').classList.toggle('hidden');">Adicionar Peça</button>
+      <button type="button" id="add-part-button" class="px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer">Adicionar Peça</button>
     </div>
+  </div>
 
-    <div id="myModal" class="hidden fixed z-10 inset-0 overflow-y-auto">
-      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-        <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-          <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-        </div>
-        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-          <!-- Adicionando o botão de fechar -->
-          <div class="absolute top-0 right-0 pt-4 pr-4">
-            <button type="button" onclick="document.getElementById('myModal').classList.toggle('hidden');" class="text-gray-500 hover:text-gray-800 focus:outline-none">
-              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
-          <!-- Aqui será renderizado o formulário da parte (part/new) -->
-          <%= render "parts/form" %>
-        </div>
-      </div>
-    </div>
+  <div id="added-parts">
+    <!-- Aqui as partes adicionadas serão exibidas dinamicamente -->
+  </div>
+
+  <div>
     <%= form.submit @assembly.persisted? ? t('views.assemblies.form.update') : t('views.assemblies.form.create'), class: (@assembly.persisted? ? "bg-yellow-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer" : "bg-green-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer") %>
   </div>
 <% end %>
