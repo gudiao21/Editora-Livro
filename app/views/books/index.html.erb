@@ -16,6 +16,7 @@
       <tr>
         <th scope="col" class="px-4 py-3"><%= t('views.books.index.title') %></th>
         <th scope="col" class="px-4 py-3"><%= 'isbn' %></th>
+        <th scope="col" class="px-4 py-3"><%= t('views.books.index.author') %></th>
         <th scope="col" class="px-4 py-3">
           <span class="sr-only">Actions</span>
         </th>
@@ -26,6 +27,7 @@
         <tr class=" border-b dark:border-gray-700">
           <th scope="row" class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= book.title %></th>
           <th scope="row" class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= book.isbn %></th>
+          <th scope="row" class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= book.author.name %></th>
           <td class="px-4 py-3 flex items-center justify-end">
             <button id="book-dropdown-button-<%= book.id %>" data-dropdown-toggle="book-dropdown-<%= book.id %>" class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100" type="button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
