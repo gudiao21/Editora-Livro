@@ -16,6 +16,7 @@
       <tr>
         <th scope="col" class="px-4 py-3"><%= t('views.assemblies.index.name') %></th>
         <th scope="col" class="px-4 py-3"><%= t('views.assemblies.index.assembly_parts') %></th>
+        <th scope="col" class="px-4 py-3"><%= t('views.assemblies.index.book_title') %></th>
         <th scope="col" class="px-4 py-3">
           <span class="sr-only">Actions</span>
         </th>
@@ -25,11 +26,15 @@
       <% @assemblies.each do |assembly| %>
         <tr class="border-b dark:border-gray-700">
           <td class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= assembly.name %></td>
+
           <td class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white">
             <% assembly.parts.each do |part| %>
               <%= part.name %>
             <% end %>
           </td>
+
+          <td class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= assembly.book.title %></td>
+
           <td class="px-4 py-3 flex items-center justify-end">
             <button id="assembly-dropdown-button-<%= assembly.id %>" data-dropdown-toggle="assembly-dropdown-<%= assembly.id %>" class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100" type="button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
