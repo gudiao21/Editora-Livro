@@ -2,7 +2,7 @@ pt-BR:
   views:
     parts:
       index:
-        add_new_part: Adicionar nova parte
+        add_new_part: Adicionar nova parte para o livro
         part_number: 'Número da parte: '
         part_name: Nome da parte
         show_ellipsis_label: Mostrar
