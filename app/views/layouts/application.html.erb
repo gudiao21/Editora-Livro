@@ -30,7 +30,7 @@
             <div class="flex flex-col flex-grow pt-5 overflow-y-auto bg-white">
               <div class="flex items-center flex-shrink-0 px-4">
                 <%= image_tag("logo.png", size: "50x50", class: "imagem-redonda") %>
-                <p class="text-2xl leading-6"><%= link_to "Editora-Livro", root_path %></p>
+                <p class="text-2xl leading-6"><%= link_to t('side_bar.book_publisher'), root_path %></p>
               </div>
 
               <div class="px-4 mt-6">
@@ -42,7 +42,7 @@
                   <nav class="flex-1 space-y-2">
                     <%= link_to authors_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
                       <%= image_tag("authors.jpeg", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
-                      Authors
+                      <%= t('side_bar.authors') %>
                     <% end %>
                   </nav>
 
@@ -51,7 +51,7 @@
                   <nav class="flex-1 space-y-2">
                     <%= link_to books_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
                       <%= image_tag("books.png", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
-                      Books
+                      <%= t('side_bar.books') %>
                     <% end %>
                   </nav>
 
@@ -60,7 +60,7 @@
                   <nav class="flex-1 space-y-2">
                     <%= link_to suppliers_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
                       <%= image_tag("suppliers.jpeg", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
-                      Suppliers
+                      <%= t('side_bar.suppliers') %>
                     <% end %>
                   </nav>
 
@@ -69,7 +69,7 @@
                   <nav class="flex-1 space-y-2">
                     <%= link_to accounts_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
                       <%= image_tag("accounts.jpeg", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
-                      Accounts
+                      <%= t('side_bar.accounts') %>
                     <% end %>
                   </nav>
 
@@ -78,7 +78,7 @@
                   <nav class="flex-1 space-y-2">
                     <%= link_to parts_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
                     <%= image_tag("book_parts.jpeg", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
-                      Parts
+                      <%= t('side_bar.parts') %>
                     <% end %>
                   </nav>
 
@@ -87,7 +87,7 @@
                   <nav class="flex-1 space-y-2">
                     <%= link_to assemblies_path, class: "flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group" do %>
                       <%= image_tag("book_assemblies.jpeg", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
-                      Assemblies
+                      <%= t('side_bar.assemblies') %>
                     <% end %>
                   </nav>
 
@@ -100,7 +100,7 @@
                         <polyline points="16 17 21 12 16 7"></polyline>
                         <line x1="21" y1="12" x2="9" y2="12"></line>
                       </svg>
-                      Logout
+                      <%= t('side_bar.logout') %>
                     <% end %>
 
                   </nav>
