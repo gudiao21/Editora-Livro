@@ -4,6 +4,7 @@ pt-BR:
       index:
         add_new_book: Adicionar novo Livro
         title: Título
+        author: Autor
         show_ellipsis_label: Mostrar
         edit_ellipsis_label: Editar
         delete_ellipsis_label: Apagar
