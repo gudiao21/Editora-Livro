@@ -4,7 +4,8 @@ pt-BR:
       index:
         add_new_assembly: Adicionar nova Montagem
         name: Nome da montagem
-        assembly_parts: Partes para esta montagem
+        assembly_parts: Parte(s) para cada montagem
+        book_title: Título do livro
         show_ellipsis_label: Mostrar
         edit_ellipsis_label: Editar
         delete_ellipsis_label: Apagar
