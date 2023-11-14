@@ -5,6 +5,7 @@ pt-BR:
         add_new_account: Adicionar nova Conta
         account_number: Número da conta
         supplier: Fornecedor
+        account_digit: Dígito da conta
         show_ellipsis_label: Mostrar
         edit_ellipsis_label: Editar
         delete_ellipsis_label: Apagar
@@ -16,11 +17,20 @@ pt-BR:
         delete_this_account: Apagar esta conta
       form:
         account_number: Número da conta
+        account_digit: Dígito da conta
+        supplier: Fornecedor
         update: Atualizar
         create: Criar
       new:
         new_account: 'Formulário para criação de nova conta:'
+        account_digit: Dígito da conta do fornecedor
+        supplier: Fornecedor
         back_to_accounts: Voltar para Contas
+      account:
+        title: Monstrando Conta
+        account_number: Número da conta
+        account_digit: Dígito da conta
+        supplier: Fornecedor
   controllers:
     accounts:
       create:
