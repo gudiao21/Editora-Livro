@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   end
 
   resources :parts
-  resources :assemblies
+  resources :assemblies do
+    resources :assembly_parts, only: [:create, :destroy]
+  end
   resources :authors
   resources :books
   resources :accounts
