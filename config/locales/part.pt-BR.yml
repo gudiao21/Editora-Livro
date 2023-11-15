@@ -16,7 +16,7 @@ pt-BR:
         edit_this_part: Editar este autor
         delete_this_part: Apagar este autor
       form:
-        part_number: Número da parte
+        part_number: Número da parte'
         part_name: Nome da parte
         update: Atualizar
         create: Criar
@@ -25,6 +25,7 @@ pt-BR:
         new_part: 'Formulário para criação de nova parte:'
         back_to_parts: Voltar para partes
       part:
+        title: Mostrando parte
         part_number: Número da parte
         part_name: Nome da parte
         supplier: Fornecedor
