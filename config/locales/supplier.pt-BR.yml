@@ -23,6 +23,8 @@ pt-BR:
         editing_supplier: Editando Fornecedor
         show_this_supplier: Mostrar este fornecedor
         back_to_suppliers: Voltar para Fornecedores
+      supplier:
+        title: Mostrando Fornecedor
   controllers:
     suppliers:
       success: Fornecedor criado com sucesso!
