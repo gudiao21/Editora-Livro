@@ -28,6 +28,10 @@ pt-BR:
         editing_assembly: Editando Montagem
         show_this_assembly: Mostrar esta montagem
         back_to_assemblies: Voltar para Montagens
+      assembly:
+        title: Mostrando Montagem
+        assembly_part: Nome da parte referente a esta montagem
+        assembly_book: Livro referente a esta montagem
   controllers:
     assemblies:
       success: Montagem criada com sucesso!
