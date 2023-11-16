@@ -1,12 +1,19 @@
-<div id="<%= dom_id account %>">
+<div id="<%= dom_id @account %>">
+  <h1 class="text-2xl font-bold"><%= t('views.accounts.account.title') %>:</h1>
+<br>
   <p>
-    <strong>Account number:</strong>
-    <%= account.account_number %>
+    <strong><%= t('views.accounts.account.account_number') %>:</strong>
+    <%= @account.account_number %>
   </p>
 
   <p>
-    <strong>Supplier:</strong>
-    <%= account.supplier_id %>
+    <strong><%= t('views.accounts.account.account_digit') %>:</strong>
+    <%= @account.digit %>
+  </p>
+
+  <p>
+    <strong><%= t('views.accounts.account.supplier') %>:</strong>
+    <%= @account.supplier.name %>
   </p>
 
 </div>
