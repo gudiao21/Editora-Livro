@@ -12,9 +12,25 @@
   <% end %>
 
   <div>
-    <%= form.label :name, t('views.suppliers.form.name'), style: "display: block" %>
+    <%= form.label :name, t('views.suppliers.form.supplier_name'), style: "display: block" %>
     <%= form.text_field :name %>
   </div>
+
+<br>
+
+  <div>
+    <%= form.label :cnpj, 'CNPJ', style: "display: block" %>
+    <%= form.text_field :cnpj %>
+  </div>
+
+<br>
+
+  <%= @supplier.accounts do |account| %>
+    <div>
+      <%= form.label: account_number, t('views.suppliers.form.supplier_account_number'), style: "display: block" %>
+      <%= account.account_number %>
+    </div>
+  <% end %>
 
   <div>
     <%= form.submit @supplier.persisted? ? t('views.suppliers.form.update') : t('views.suppliers.form.create'), class: (@supplier.persisted? ? "bg-yellow-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer" : "bg-green-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer") %>
