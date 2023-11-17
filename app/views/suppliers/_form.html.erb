@@ -25,10 +25,10 @@
 
 <br>
 
-  <%= @supplier.accounts do |account| %>
+  <% if @supplier.account.present? %>
     <div>
-      <%= form.label: account_number, t('views.suppliers.form.supplier_account_number'), style: "display: block" %>
-      <%= account.account_number %>
+      <%= form.label :account_number, t('views.suppliers.form.supplier_account_number'), style: "display: block" %>
+      <%= form.text_field :account_number, value: account.account_number %>
     </div>
   <% end %>
 
