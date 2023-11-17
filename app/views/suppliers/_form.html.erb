@@ -30,6 +30,11 @@
       <%= form.label :account_number, t('views.suppliers.form.supplier_account_number'), style: "display: block" %>
       <%= form.text_field :account_number, value: account.account_number %>
     </div>
+
+    <div>
+      <%= form.label :digit, t('views.suppliers.form.supplier_account_digit'), style: "display: block" %>
+      <%= form.text_field :digit, value: account.digit %>
+    </div>
   <% end %>
 
   <div>
