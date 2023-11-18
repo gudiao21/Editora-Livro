@@ -1,7 +1,14 @@
-<div id="<%= dom_id supplier %>">
+<div id="<%= dom_id @supplier %>">
+  <h1 class="text-2xl font-bold"><%= t('views.suppliers.supplier.title') %>:</h1>
+  <br>
+
   <p>
-    <strong>Name:</strong>
-    <%= supplier.name %>
+    <strong><%= t('views.suppliers.index.name') %> :</strong>
+    <%= @supplier.name %>
   </p>
 
+  <p>
+    <strong><%= 'CNPJ' %> :</strong>
+    <%= @supplier.cnpj %>
+  </p>
 </div>

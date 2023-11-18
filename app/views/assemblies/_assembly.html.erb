@@ -1,7 +1,21 @@
 <div id="<%= dom_id @assembly %>">
+  <h1 class="text-2xl font-bold"><%= t('views.assemblies.assembly.title') %>:</h1>
+  <br>
+
   <p>
     <strong><%= t('views.assemblies.index.name') %> :</strong>
     <%= @assembly.name %>
   </p>
 
+  <p>
+    <strong><%= t('views.assemblies.assembly.assembly_part') %> :</strong>
+    <% @assembly.parts.each do |part| %>
+      <%= part.name %>
+    <% end %>
+  </p>
+
+  <p>
+    <strong><%= t('views.assemblies.assembly.assembly_book') %> :</strong>
+      <%= @assembly.book.title %>
+  </p>
 </div>

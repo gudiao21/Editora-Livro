@@ -1,12 +1,20 @@
-<div id="<%= dom_id book %>">
+<div id="<%= dom_id @book %>">
+  <h1 class="text-2xl font-bold"><%= t('views.books.book.title') %>:</h1>
+  <br>
+
   <p>
-    <strong>Published at:</strong>
-    <%= book.published_at %>
+    <strong><%= t('views.books.book.published_at') %>:</strong>
+    <%= @book.published_at %>
   </p>
 
   <p>
-    <strong>Author:</strong>
-    <%= book.author_id %>
+    <strong><%= t('views.books.book.author') %>:</strong>
+    <%= @book.author.name %>
+  </p>
+
+  <p>
+    <strong><%= 'ISBN:' %></strong>
+    <%= @book.isbn %>
   </p>
 
 </div>

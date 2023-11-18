@@ -4,6 +4,7 @@ class AssembliesController < ApplicationController
   # GET /assemblies or /assemblies.json
   def index
     @assemblies = Assembly.all
+    @assembly = Assembly.new
   end
 
   # GET /assemblies/1 or /assemblies/1.json
@@ -13,6 +14,7 @@ class AssembliesController < ApplicationController
   # GET /assemblies/new
   def new
     @assembly = Assembly.new
+    @part = Part.new
   end
 
   # GET /assemblies/1/edit

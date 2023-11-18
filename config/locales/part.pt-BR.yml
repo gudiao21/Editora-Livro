@@ -1,0 +1,40 @@
+pt-BR:
+  views:
+    parts:
+      index:
+        add_new_part: Adicionar nova parte para o livro
+        part_number: 'Número da parte: '
+        part_name: Nome da parte
+        show_ellipsis_label: Mostrar
+        edit_ellipsis_label: Editar
+        delete_ellipsis_label: Apagar
+        supplier: Fornecedor
+      edit:
+        editing_part: Editando parte
+        back_to_parts: Voltar para partes
+        show_this_part: Mostrar esta parte
+        edit_this_part: Editar este autor
+        delete_this_part: Apagar este autor
+      form:
+        part_number: Número da parte'
+        part_name: Nome da parte
+        update: Atualizar
+        create: Criar
+        select_supplier: Selecione um fornecedor
+      new:
+        new_part: 'Formulário para criação de nova parte:'
+        back_to_parts: Voltar para partes
+      part:
+        title: Mostrando parte
+        part_number: Número da parte
+        part_name: Nome da parte
+        supplier: Fornecedor
+      show:
+        back_to_parts: Voltar para partes
+        edit_this_part: Editar esta parte
+        delete_this_part: Apagar esta parte
+  controllers:
+    parts:
+      success: Parte criada com sucesso!
+      update: Parte atualizada com sucesso!
+      destroy: Parte apagada com sucesso!

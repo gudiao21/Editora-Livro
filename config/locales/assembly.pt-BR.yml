@@ -3,6 +3,9 @@ pt-BR:
     assemblies:
       index:
         add_new_assembly: Adicionar nova Montagem
+        name: Nome da montagem
+        assembly_parts: Parte(s) para cada montagem
+        book_title: Título do livro
         name: Nome
         show_ellipsis_label: Mostrar
         edit_ellipsis_label: Editar
@@ -13,6 +16,7 @@ pt-BR:
         create: Criar
         book_title: Título do livro
         select_book: Selecione um livro
+        parts: 'Parte(s):'
         parts: Parte(s)
       new:
         new_assembly: 'Formulário para criação de nova montagem:'
@@ -26,8 +30,13 @@ pt-BR:
         editing_assembly: Editando Montagem
         show_this_assembly: Mostrar esta montagem
         back_to_assemblies: Voltar para Montagens
+      assembly:
+        title: Mostrando Montagem
+        assembly_part: Nome da parte referente a esta montagem
+        assembly_book: Livro referente a esta montagem
   controllers:
     assemblies:
       success: Montagem criada com sucesso!
       update: Montagem atualizada com sucesso!
+      destroy: Montagem apagada com sucesso!
       destroy: Montagem apagada com sucesso!

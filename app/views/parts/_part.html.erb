@@ -1,7 +1,15 @@
 <div id="<%= dom_id @part %>">
+  <h1 class="text-2xl font-bold"><%= t('views.parts.part.title') %>:</h1>
+  <br>
+
   <p>
-    <strong><%= t('views.parts.index.part_number') %></strong>
+    <strong><%= t('views.parts.part.part_number') %>:</strong>
     <%= @part.part_number %>
+  </p>
+
+  <p>
+    <strong><%= t('views.parts.part.part_name') %>:</strong>
+    <%= @part.name %>
   </p>
 
   <p>

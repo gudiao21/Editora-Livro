@@ -1,10 +1,10 @@
 <%= form_with(model: @account) do |form| %>
   <% if @account.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+      <h2><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h2>
 
       <ul>
-        <% account.errors.each do |error| %>
+        <% @account.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -16,8 +16,14 @@
     <%= form.text_field :name %>
   </div>
 
+<br>
+
+  <div>
+    <%= form.label :supplier_id, t('views.accounts.form.supplier'), style: "display: block" %>
+    <%= form.collection_select :supplier_id, Supplier.all, :id, :name, { prompt: true } %>
+  </div>
+
   <div>
     <%= form.submit @account.persisted? ? t('views.accounts.form.update') : t('views.accounts.form.create'), class: (@account.persisted? ? "bg-yellow-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer" : "bg-green-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer") %>
   </div>
 <% end %>
-

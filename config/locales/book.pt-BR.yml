@@ -4,6 +4,7 @@ pt-BR:
       index:
         add_new_book: Adicionar novo Livro
         title: Título
+        author: Autor
         show_ellipsis_label: Mostrar
         edit_ellipsis_label: Editar
         delete_ellipsis_label: Apagar
@@ -24,8 +25,13 @@ pt-BR:
         editing_book: Editando Livro
         show_this_book: Mostrar este livro
         back_to_books: Voltar para livros
+      book:
+        title: Mostrando Livro
+        published_at: Publicado em
+        author: Autor
   controllers:
     books:
       success: Livro criado com sucesso!
       update: Livro atualizado com sucesso!
+      destroy: Livro apagado com sucesso!
       destroy: Livro apagado com sucesso!

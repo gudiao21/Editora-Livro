@@ -29,7 +29,13 @@
     <%= form.label :parts, t('views.assemblies.form.parts'), style: "display: block" %>
     <div class="flex items-center space-x-2">
       <div class="w-1/2">
-        <%= form.collection_select :part_ids, Part.all, :id, :name, { prompt: t('views.assemblies.form.select_part') }, multiple: true, class: "w-full" %>
+        <div class="container"> <!-- Adicionado o contêiner aqui -->
+          <%= form.collection_check_boxes :part_ids, Part.all, :id, :name do |b| %>
+            <label class="block">
+              <%= b.check_box + b.text %>
+            </label>
+          <% end %>
+        </div> <!-- Fechamento do contêiner -->
       </div>
       <button type="button" id="add-part-button" class="px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer">Adicionar Peça</button>
     </div>
@@ -43,44 +49,3 @@
     <%= form.submit @assembly.persisted? ? t('views.assemblies.form.update') : t('views.assemblies.form.create'), class: (@assembly.persisted? ? "bg-yellow-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer" : "bg-green-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer") %>
   </div>
 <% end %>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const addPartButton = document.getElementById("add-part-button");
-        const addedParts = document.getElementById("added-parts");
-
-        addPartButton.addEventListener("click", function() {
-            const partSelect = document.querySelector("select[name='assembly[part_ids][]']");
-            const selectedOption = partSelect.options[partSelect.selectedIndex];
-            if (selectedOption && selectedOption.value) {
-                const partName = selectedOption.text;
-                const partId = selectedOption.value;
-
-                // Crie um novo elemento para exibir a parte selecionada
-                const partElement = document.createElement("div");
-                partElement.innerHTML = `
-        <div class="flex items-center justify-between py-2 border-b">
-          <span>${partName}</span>
-          <button type="button" class="text-red-600 cursor-pointer remove-part" data-part-id="${partId}">Remover</button>
-        </div>
-      `;
-
-                addedParts.appendChild(partElement);
-
-                // Limpe a seleção do select
-                partSelect.selectedIndex = 0;
-            }
-        });
-
-        addedParts.addEventListener("click", function(event) {
-            if (event.target.classList.contains("remove-part")) {
-                const partId = event.target.getAttribute("data-part-id");
-                const partElement = addedParts.querySelector(`div[data-part-id="${partId}"]`);
-                if (partElement) {
-                    addedParts.removeChild(partElement);
-                }
-            }
-        });
-    });
-
-</script>

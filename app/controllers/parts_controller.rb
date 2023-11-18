@@ -1,5 +1,5 @@
 class PartsController < ApplicationController
-  before_action :set_part, only: %i[ show edit update destroy ]
+  before_action :set_part, only: %i[ show edit update destroy]
 
   # GET /parts or /parts.json
   def index
@@ -25,9 +25,11 @@ class PartsController < ApplicationController
 
     respond_to do |format|
       if @part.save
+        Rails.logger.info("Part saved successfully. Name: #{@part.name}")
         format.html { redirect_to part_url(@part), notice: t('controllers.parts.success') }
         format.json { render :show, status: :created, location: @part }
       else
+        Rails.logger.error("Part not saved. Errors: #{part.errors.full_messages}")
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @part.errors, status: :unprocessable_entity }
       end
@@ -65,6 +67,6 @@ class PartsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def part_params
-      params.require(:part).permit(:part_number, :supplier_id, assembly_ids: [])
+      params.require(:part).permit(:part_number, :name, :supplier_id, assembly_ids: [])
     end
 end
