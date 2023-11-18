@@ -31,6 +31,7 @@ pt-BR:
         account_number: Número da conta
         account_digit: Dígito da conta
         supplier: Fornecedor
+        back_to_accounts: Voltar para Contas
   controllers:
     accounts:
       create:

@@ -6,6 +6,7 @@ pt-BR:
         name: Nome da montagem
         assembly_parts: Parte(s) para cada montagem
         book_title: Título do livro
+        name: Nome
         show_ellipsis_label: Mostrar
         edit_ellipsis_label: Editar
         delete_ellipsis_label: Apagar
@@ -16,6 +17,7 @@ pt-BR:
         book_title: Título do livro
         select_book: Selecione um livro
         parts: 'Parte(s):'
+        parts: Parte(s)
       new:
         new_assembly: 'Formulário para criação de nova montagem:'
         back_to_assemblies: Voltar para Montagens
@@ -36,4 +38,5 @@ pt-BR:
     assemblies:
       success: Montagem criada com sucesso!
       update: Montagem atualizada com sucesso!
+      destroy: Montagem apagada com sucesso!
       destroy: Montagem apagada com sucesso!

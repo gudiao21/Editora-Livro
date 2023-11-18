@@ -4,6 +4,7 @@ pt-BR:
         index:
           add_new_author: Adicionar novo Autor
           author_name: Nome do Autor
+          name: Nome
           show_ellipsis_label: Mostrar
           edit_ellipsis_label: Editar
           delete_ellipsis_label: Apagar
