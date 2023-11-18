@@ -14,8 +14,10 @@
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
-        <th scope="col" class="px-4 py-3"><%= t('views.suppliers.index.name') %></th>
+        <th scope="col" class="px-4 py-3"><%= t('views.suppliers.index.supplier_name') %></th>
         <th scope="col" class="px-4 py-3"><%= 'CNPJ' %></th>
+        <th scope="col" class="px-4 py-3"><%= t('views.suppliers.index.supplier_account_number') %></th>
+        <th scope="col" class="px-4 py-3"><%= t('views.suppliers.index.supplier_account_digit') %></th>
         <th scope="col" class="px-4 py-3">
           <span class="sr-only">Actions</span>
         </th>
@@ -26,6 +28,8 @@
         <tr class=" border-b dark:border-gray-700">
           <th scope="row" class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= supplier.name %></th>
           <th scope="row" class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= supplier.cnpj %></th>
+          <th scope="row" class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= supplier.account&.account_number %></th>
+          <th scope="row" class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= supplier.account&.digit %></th>
           <td class="px-4 py-3 flex items-center justify-end">
             <button id="supplier-dropdown-button-<%= supplier.id %>" data-dropdown-toggle="supplier-dropdown-<%= supplier.id %>" class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100" type="button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
