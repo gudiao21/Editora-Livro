@@ -2,7 +2,8 @@ class AccountsController < ApplicationController
   before_action :set_account, only: %i[ show edit update destroy ]
 
   def index
-    @accounts = Account.all
+    @accounts = Account.search(params[:search]) if (params[:search]) and (params[:search_type] == 'numero_conta')
+    @accounts = Account.all unless params[:search]
   end
 
   def show
