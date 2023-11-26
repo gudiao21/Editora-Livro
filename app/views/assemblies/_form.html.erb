@@ -37,7 +37,9 @@
           <% end %>
         </div> <!-- Fechamento do contêiner -->
       </div>
-      <button type="button" id="add-part-button" class="px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer">Adicionar Peça</button>
+      <%= link_to new_part_path, class: "px-4 py-2 bg-blue-500 text-white rounded-lg cursor-pointer" do %>
+        Adicionar Peça
+      <% end %>
     </div>
   </div>
 
@@ -48,4 +50,15 @@
   <div>
     <%= form.submit @assembly.persisted? ? t('views.assemblies.form.update') : t('views.assemblies.form.create'), class: (@assembly.persisted? ? "bg-yellow-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer" : "bg-green-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer") %>
   </div>
+
+  <!-- Adicione este script ao final do seu layout ou antes do fechamento do corpo </body> -->
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          // Encontrar e ocultar a tag meta com o csrf-token
+          var csrfMetaTag = document.querySelector('meta[name="csrf-token"]');
+          if (csrfMetaTag) {
+              csrfMetaTag.parentNode.removeChild(csrfMetaTag);
+          }
+      });
+  </script>
 <% end %>

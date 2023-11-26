@@ -3,12 +3,16 @@ pt-BR:
     suppliers:
       index:
         add_new_supplier: Adicionar novo Fornecedor
-        name: Nome
+        supplier_name: Nome do Fornecedor
+        supplier_account_number: Número da Conta
+        supplier_account_digit: Dígito da Conta
         show_ellipsis_label: Mostrar
         edit_ellipsis_label: Editar
         delete_ellipsis_label: Apagar
       form:
-        name: Nome
+        supplier_name: Nome
+        supplier_account_number: Número da Conta do Fornecedor
+        supplier_account_digit: Dígito Verificador
         update: Atualizar
         create: Criar
       new:

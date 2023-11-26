@@ -1,0 +1,11 @@
+pt-BR:
+  side_bar:
+    login_title: 'Login para aplicação da Editora de livros :'
+    book_publisher: Editora Livro
+    authors: Autores
+    books: Livros
+    suppliers: Fornecedores
+    accounts: Contas dos Fornecedores
+    parts: Partes das montagens
+    assemblies: Montagens
+    logout: Sair
