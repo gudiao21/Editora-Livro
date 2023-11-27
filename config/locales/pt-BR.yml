@@ -3,3 +3,8 @@ pt-BR:
     errors:
       messages:
         record_invalid: "Houve um erro ao salvar o registro."
+      models:
+        book:
+          attributes:
+            title:
+              blank: "O título do livro não pode estar em branco."
