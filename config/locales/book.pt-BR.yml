@@ -9,6 +9,7 @@ pt-BR:
         edit_ellipsis_label: Editar
         delete_ellipsis_label: Apagar
       form:
+        prohibited_be_saved: Este livro está proibido de ser salvo
         title: Título do Livro
         update: Atualizar
         create: Criar
@@ -27,7 +28,7 @@ pt-BR:
         back_to_books: Voltar para livros
       book:
         title: Mostrando Livro
-        published_at: Publicado em
+        book_title: Título do livro
         author: Autor
   controllers:
     books:
