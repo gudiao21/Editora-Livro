@@ -31,7 +31,7 @@ pt-BR:
         show_this_assembly: Mostrar esta montagem
         back_to_assemblies: Voltar para Montagens
       assembly:
-        title: Mostrando Montagem
+        title: Mostrando Montagem salvada
         assembly_part: Nome da parte referente a esta montagem
         assembly_book: Livro referente a esta montagem
   controllers:
