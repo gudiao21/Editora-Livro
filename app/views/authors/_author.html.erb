@@ -1,7 +1,15 @@
-<div id="<%= dom_id author %>">
+<div id="<%= dom_id @author %>">
+  <h1 class="text-2xl font-bold"><%= t('views.authors.author.title') %>:</h1>
+  <br>
+
   <p>
-    <strong>Name:</strong>
-    <%= author.name %>
+    <strong><%= t('views.authors.author.name') %>:</strong>
+    <%= @author.name %>
+  </p>
+
+  <p>
+    <strong><%= 'CPF' %>:</strong>
+    <%= @author.cpf %>
   </p>
 
 </div>
