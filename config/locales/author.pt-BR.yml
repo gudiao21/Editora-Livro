@@ -21,6 +21,9 @@ pt-BR:
         new:
           new_author: 'Formulário para criação de novo autor:'
           back_to_authors: Voltar para Autores
+        author:
+          title: Mostrando Autor salvo
+          name: Nome do autor
     controllers:
       authors:
         create:
