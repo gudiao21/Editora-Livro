@@ -25,7 +25,7 @@ pt-BR:
         new_part: 'Formulário para criação de nova parte:'
         back_to_parts: Voltar para partes
       part:
-        title: Mostrando parte
+        title: Mostrando parte salva
         part_number: Número da parte
         part_name: Nome da parte
         supplier: Fornecedor
