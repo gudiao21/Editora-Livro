@@ -3,7 +3,12 @@ pt-BR:
     suppliers:
       index:
         add_new_supplier: Adicionar novo Fornecedor
+        search_suppliers: Procura por nome do fornecedor ou número de conta
+        search_label: Nome ou Número de conta
+        search_by: Procurar por nome ou número de conta
+        search: Procurar
         supplier_name: Nome do Fornecedor
+        name: Nome
         supplier_account_number: Número da Conta
         supplier_account_digit: Dígito da Conta
         show_ellipsis_label: Mostrar
@@ -28,7 +33,7 @@ pt-BR:
         show_this_supplier: Mostrar este fornecedor
         back_to_suppliers: Voltar para Fornecedores
       supplier:
-        title: Mostrando Fornecedor
+        title: Mostrando Fornecedor salvo
   controllers:
     suppliers:
       success: Fornecedor criado com sucesso!
