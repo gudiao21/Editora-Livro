@@ -3,6 +3,9 @@ pt-BR:
     books:
       index:
         add_new_book: Adicionar novo Livro
+        search_books: Procura por título do livro ou nome do autor
+        search_label: Título ou nome
+        search: Procurar
         title: Título
         author: Autor
         show_ellipsis_label: Mostrar
@@ -27,7 +30,7 @@ pt-BR:
         show_this_book: Mostrar este livro
         back_to_books: Voltar para livros
       book:
-        title: Mostrando Livro
+        title: Mostrando Livro salvo
         book_title: Título do livro
         author: Autor
   controllers:
