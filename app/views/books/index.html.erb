@@ -5,7 +5,7 @@
       <strong><%= t('views.books.index.search_books') %>:</strong>
       <%= form_tag(books_path, method: :get) do %>
         <%= text_field_tag :query, params[:query], placeholder:  t('views.books.index.search_label') %>
-        <%= select_tag :search_by, options_for_select([['Título', 'title'], ['Nome do autor', 'name']], params[:search_by]) %>
+        <%= select_tag :search_by, options_for_select([['Título do Livro', 'title'], ['Nome do autor', 'name']], params[:search_by]) %>
         <%= submit_tag t("views.books.index.search"), class: ("bg-green-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer") %>
       <% end %>
       </form>
