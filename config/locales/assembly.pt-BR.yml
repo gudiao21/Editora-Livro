@@ -2,9 +2,12 @@ pt-BR:
   views:
     assemblies:
       index:
+        search_title: Procura por nome de peça
+        search_label: Nome da Peça
+        search_button: Procurar
         add_new_assembly: Adicionar nova Montagem
         name: Nome da montagem
-        assembly_parts: Parte(s) para cada montagem
+        assembly_parts: Nome(s) da(s) peças(s) para cada montagem
         book_title: Título do livro
         show_ellipsis_label: Mostrar
         edit_ellipsis_label: Editar
