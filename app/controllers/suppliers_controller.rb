@@ -3,10 +3,20 @@ class SuppliersController < ApplicationController
 
   # GET /suppliers or /suppliers.json
   def index
+    puts "Params: #{params.inspect}"
     @suppliers = Supplier.all
+
+    if params[:query].present?
+      if params[:search_by] == 'name'
+        @suppliers = @suppliers.by_supplier_name(params[:query])
+      elsif params[:search_by] == 'account_number'
+        @suppliers = @suppliers.by_account_number(params[:query])
+      else
+        # Trate outros casos conforme necessário
+      end
+    end
   end
 
-  # GET /suppliers/1 or /suppliers/1.json
   def show
   end
 
@@ -65,6 +75,6 @@ class SuppliersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def supplier_params
-      params.require(:supplier).permit(:name, :cnpj)
+      params.require(:supplier).permit(:name, :cnpj, :account_number, :digit)
     end
 end
