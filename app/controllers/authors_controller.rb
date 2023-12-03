@@ -2,12 +2,7 @@ class AuthorsController < ApplicationController
   before_action :set_author, only: %i[ show edit update destroy ]
 
   def index
-    if current_user.nil?
-      redirect_to new_user_session_path
-    else
-      @authors = Author.all
-      render 'index'
-    end
+    @authors = Author.all
   end
 
   def show
@@ -20,16 +15,16 @@ class AuthorsController < ApplicationController
   def edit
   end
 
-   def create
-    @author = Author.new(author_params)
+ def create
+  @author = Author.new(author_params)
 
-    respond_to do |format|
-      if @author.save
-        format.html { redirect_to author_url(@author), notice: t('controllers.authors.create.success') }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+  respond_to do |format|
+    if @author.save
+      format.html { redirect_to author_url(@author), notice: t('controllers.authors.create.success') }
+    else
+      format.html { render :new, status: :unprocessable_entity }
     end
+  end
   end
 
   def update
@@ -56,6 +51,6 @@ class AuthorsController < ApplicationController
     end
 
     def author_params
-      params.require(:author).permit(:name, :cpf, :isbn)
+      params.require(:author).permit(:name, :cpf)
     end
 end
