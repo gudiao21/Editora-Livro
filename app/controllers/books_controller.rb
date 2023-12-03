@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = Book.all
+    @books = build_query
   end
 
   # GET /books/1 or /books/1.json
@@ -63,8 +63,22 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
     end
 
+  def build_query
+    if params[:query].present?
+      case params[:search_by]
+      when 'title'
+        Book.search(params[:query])
+      when 'name'
+        Book.by_author_name(params[:query])
+      else
+        Book.all
+      end
+    else
+      Book.all
+    end
+  end
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:published_at, :author_id)
+      params.require(:book).permit(:title, :author_id, :isbn)
     end
 end
