@@ -6,8 +6,8 @@ pt-BR:
         search_books: Procura por título do livro ou nome do autor
         search_label: Título ou nome
         search: Procurar
-        title: Título
-        author: Autor
+        title: Título do Livro
+        author: Nome do autor
         show_ellipsis_label: Mostrar
         edit_ellipsis_label: Editar
         delete_ellipsis_label: Apagar
