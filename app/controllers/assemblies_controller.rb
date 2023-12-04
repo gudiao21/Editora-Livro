@@ -3,8 +3,7 @@ class AssembliesController < ApplicationController
 
   # GET /assemblies or /assemblies.json
   def index
-    @assemblies = Assembly.all
-    @assembly = Assembly.new
+    @assemblies = build_query
   end
 
   # GET /assemblies/1 or /assemblies/1.json
@@ -60,6 +59,15 @@ class AssembliesController < ApplicationController
   end
 
   private
+
+  def build_query
+    @assemblies = if params[:query].present?
+                    Assembly.search_by_name(params[:query])
+                  else
+                    Assembly.all
+                  end
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_assembly
       @assembly = Assembly.find(params[:id])
