@@ -3,7 +3,7 @@
     <div class="w-full md:w-1/2">
 
       <strong><%= t('views.assemblies.index.search_title') %>:</strong>
-      <%= form_tag(books_path, method: :get) do %>
+      <%= form_tag(assemblies_path, method: :get) do %>
         <%= text_field_tag :query, params[:query], placeholder:  t('views.assemblies.index.search_label') %>
         <%= submit_tag t("views.assemblies.index.search_button"), class: ("bg-green-500 text-white font-bold py-2 px-4 rounded-full cursor-pointer") %>
       <% end %>
@@ -34,7 +34,7 @@
       <tbody>
       <% @assemblies.each do |assembly| %>
         <tr class="border-b dark:border-gray-700">
-          <td class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= assembly.name %></td>
+          <td class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white"><%= assembly.part.name %></td>
 
           <td class="px-4 py-3 font-medium text-gray-600 whitespace-nowrap dark:text-white">
             <% assembly.parts.each do |part| %>
