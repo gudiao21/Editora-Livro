@@ -5,7 +5,7 @@ class Book < ApplicationRecord
   validate :isbn_is_valid?
 
   scope :search, ->(query) { where("title like ?", "%#{query}%") }
-  scope :by_author_name, ->(query) { joins(:author).where("LOWER(authors.description) LIKE ?", "%#{query.downcase}%") }
+  scope :by_author_name, ->(query) { joins(:author).where("LOWER(authors.name) LIKE ?", "%#{query.downcase}%") }
 
   private
 
