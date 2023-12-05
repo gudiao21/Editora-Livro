@@ -1,0 +1,12 @@
+<h1>Relatório de Autores</h1>
+
+<% @authors.each do |author| %>
+  <h2><%= author.name %></h2>
+  <ul>
+    <% author.books.each do |book| %>
+      <li><%= book.title %></li>
+    <% end %>
+  </ul>
+  <p>Total de Livros Publicados: <%= author.books.count %></p>
+<% end %>
+sfdfdafdsafdsfdsafsafdfadsfdfdsafdsafdsafsfsdafdsafsdffdsfsdafdsfsdafdsafsaddsfsdffadsfdsfddsafdfsa
