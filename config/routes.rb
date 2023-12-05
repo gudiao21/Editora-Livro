@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     root to: 'welcome#index'
   end
 
+  get '/reports/author_report', to: 'reports#author_report', as: 'author_report'
+
   resources :parts
   resources :assemblies do
     resources :assembly_parts, only: [:create, :destroy]
