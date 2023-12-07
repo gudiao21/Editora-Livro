@@ -1,0 +1,15 @@
+<h1>Relatório de Fornecedores</h1>
+
+<% @suppliers.each do |supplier| %>
+  <h2><%= supplier.name %></h2>
+  <ul>
+    <% supplier.parts.each do |part| %>
+      <li><%= part.name %></li>
+      <ul>
+        <% part.assemblies.each do |assembly| %>
+          <li><%= assembly.book.title %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </ul>
+<% end %>
