@@ -1,0 +1,17 @@
+<h1>Relatório de Livros com Montagem</h1>
+
+<% @books.each do |book| %>
+  <h2><%= book.title %></h2>
+  <ul>
+    <% book.assemblies.each do |assembly| %>
+      <li><%= assembly.name %></li>
+      <ul>
+        <% assembly.parts.each do |part| %>
+          <li><%= part.name %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </ul>
+  <p>Total de Peças: <%= book.assemblies.flat_map(&:parts).count %></p>
+  <p>Custo Total da Montagem: <%= book.assemblies.flat_map(&:parts).sum(&:cost) %></p>
+<% end %>
