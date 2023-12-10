@@ -97,11 +97,11 @@
                   <hr class="border-gray-200"/>
 
                   <nav class="flex-1 space-y-2">
-                    <div class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group">
+                    <div id="reportsMenu" class="flex items-center px-4 py-2.5 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-white rounded-lg hover:bg-indigo-600 group">
                       <%= image_tag("report.jpeg", alt: "Relatório", class: "flex-shrink-0 w-5 h-5 mr-4 w-6 h-6") %>
                       <%= t('side_bar.reports') %>
                     </div>
-                    <ul class="hidden">
+                    <ul id="submenu" class="hidden absolute left-0 mt-2 space-y-2 bg-white shadow-md">>
                       <li><%= link_to t('side_bar.authors_report'), author_report_path %></li>
                       <li><%= link_to t('side_bar.suppliers_report'), supplier_report_path %></li>
                       <li><%= link_to t('side_bar.books_report'), book_report_path %></li>
@@ -152,4 +152,16 @@
   <% end %>
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const reportsMenu = document.getElementById("reportsMenu");
+        const submenu = document.getElementById("submenu");
+
+        reportsMenu.addEventListener("click", function () {
+            submenu.classList.toggle("hidden");
+        });
+    });
+</script>
+
 </body>
+</html>
