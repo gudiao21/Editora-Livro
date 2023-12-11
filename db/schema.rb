@@ -25,9 +25,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_04_233430) do
 
   create_table "assemblies", force: :cascade do |t|
     t.string "name"
-    t.bigint "book_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "book_id", null: false
     t.index ["book_id"], name: "index_assemblies_on_book_id"
   end
 
